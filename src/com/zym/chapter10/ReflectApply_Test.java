@@ -167,18 +167,12 @@ public class ReflectApply_Test {
             strBuffer.append(Modifier.toString(cls.getModifiers()) + "class " + cls.getName() + "{\n");
 
             for (Method m : methods){
-                strBuffer.append("\t" + Modifier.toString(m.getModifiers()) + " " + m.getName() + "(");
-//                System.out.println(Modifier.toString(m.getModifiers()) + " " + m.getGenericReturnType() + " " + m.getName());
+                strBuffer.append("\t" + Modifier.toString(m.getModifiers()) + " " + m.getReturnType() + " " + m.getName() + "(");
                 Class[] pc = m.getParameterTypes();
-                int i=0;
                 for (Class c : pc){
-                    i++;
-                    if (pc.length != i) {
                         strBuffer.append(c.getSimpleName() + ", ");
-                    } else {
-                        strBuffer.append(c.getSimpleName());
-                    }
                 }
+                strBuffer.delete(strBuffer.length()-2, strBuffer.length()); // 删除最后一组多余的", "
                 strBuffer.append("){}\n");
             }
             strBuffer.append("}");
@@ -200,15 +194,13 @@ public class ReflectApply_Test {
 
         try {
 
-            Class cls = Class.forName("chapter10.CustomerService");
+            Class cls = Class.forName("com.zym.chapter10.CustomerService");
             Object obj = cls.newInstance();
             Method method = cls.getDeclaredMethod("login", String.class, String.class);
 
             Object retVal = method.invoke(obj, "admin", "123");
 
             System.out.println("lonin : " + retVal);
-
-
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -232,7 +224,6 @@ public class ReflectApply_Test {
         StringBuffer strBuffer = new StringBuffer();
 
         try {
-
             Class aClasss = Class.forName("java.lang.String");
             Constructor[] constructors = aClasss.getConstructors();
 
@@ -241,15 +232,10 @@ public class ReflectApply_Test {
             for (Constructor c : constructors){
                 strBuffer.append("\t" + Modifier.toString(c.getModifiers()) + " " + aClasss.getSimpleName() + "(");
                 Class[] pc = c.getParameterTypes();
-                int i=0;
                 for (Class p : pc){
-                    i++;
-                    if (i != pc.length) {
-                        strBuffer.append(p.getSimpleName() + ", ");
-                    } else {
-                        strBuffer.append(p.getSimpleName());
-                    }
+                    strBuffer.append(p.getSimpleName() + ", ");
                 }
+                strBuffer.delete(strBuffer.length()-2, strBuffer.length());
                 strBuffer.append(")\n");
             }
             strBuffer.append("}");
@@ -269,7 +255,7 @@ public class ReflectApply_Test {
 
         try {
 
-            Class aClass = Class.forName("chapter10.User");
+            Class aClass = Class.forName("com.zym.chapter10.User");
 
             //获取带参数的构造方法
             Constructor constructor = aClass.getConstructor(String.class);
@@ -292,7 +278,7 @@ public class ReflectApply_Test {
     }
 
     public static void main(String[] args) {
-        ReflectApply_Test.test3();
+        ReflectApply_Test.test7();
     }
 }
 
