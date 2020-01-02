@@ -46,6 +46,7 @@ public class Chapter11 {
          * 1. 接口新增default默认方法;
          * 2. 接口新增static静态方法;
          */
+        System.out.println("-----------接口默认方法 & 静态方法:");
         RedCar redCar = new RedCar();
         MyCar myCar = new MyCar();
 
@@ -55,7 +56,10 @@ public class Chapter11 {
         IFourWheeler.blowHorn();
 
         /**
-         *
+         * 1. 函数式接口用例
+         * 2. Lambda表达式
          */
+        System.out.println("-----------函数式接口 & Lambda表达式:");
+        FunctionalInterfaceAndLambda.test();
     }
 }

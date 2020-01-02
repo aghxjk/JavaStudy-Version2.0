@@ -106,6 +106,7 @@
 ### [第11章 Java8 新特性](src/com/zym/chapter11/Chapter11.java)
     |---第11章 [ Java8 新特性 ]
         |---01. Interface：默认方法 & 静态方法
+        |---02. Lambda & 函数式接口
 ```text
   |---设计模式
         |---01. 动态代理模式(proxyMode)

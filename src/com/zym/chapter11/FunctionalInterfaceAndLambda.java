@@ -2,7 +2,14 @@ package com.zym.chapter11;
 
 public class FunctionalInterfaceAndLambda {
     public static void main(String[] args) {
+        FunctionalInterfaceAndLambda.test();
+    }
 
+    private int operate(int a, int b, MathOperation mathOperation) {
+        return mathOperation.operation(a, b);
+    }
+
+    public static void test() {
         // 类型声明
         MathOperation addtion = (int a, int b) -> a + b;
 
@@ -32,17 +39,12 @@ public class FunctionalInterfaceAndLambda {
          * 调用方式二：
          * 1. 传递函数式接口实例给调用方法
          */
-        System.out.println("--------------------------");
+        System.out.println("--------");
         FunctionalInterfaceAndLambda functionalInterfaceAndLambda = new FunctionalInterfaceAndLambda();
         System.out.println("1 + 1 = " + functionalInterfaceAndLambda.operate(1, 1, addtion));
         System.out.println("2 - 1 = " + functionalInterfaceAndLambda.operate(2, 1, subtraction));
         System.out.println("2 * 2 = " + functionalInterfaceAndLambda.operate(2, 1, multiplication));
         System.out.println("4 / 2 = " + functionalInterfaceAndLambda.operate(4, 2, division));
-
-    }
-
-    private int operate(int a, int b, MathOperation mathOperation) {
-        return mathOperation.operation(a, b);
     }
 }
 
