@@ -6,24 +6,24 @@ public class FunctionalInterfaceAndLambda {
     }
 
     private int operate(int a, int b, MathOperation mathOperation) {
-        return mathOperation.operation(a, b);
+        return (Integer) mathOperation.operation(a, b);
     }
 
     public static void test() {
         // 类型声明
-        MathOperation addtion = (int a, int b) -> a + b;
+        MathOperation addtion = (Object a, Object b) -> (Integer)a + (Integer) b;
 
         // 不用类型声明
-        MathOperation subtraction = (a, b) -> a - b;
+        MathOperation subtraction = (a, b) -> (Integer)a - (Integer)b;
 
         // 大括号中的返回语句
-        MathOperation multiplication = (int a, int b) -> {
+        MathOperation multiplication = (Object a, Object b) -> {
             System.out.println();
-            return a * b;
+            return (Integer)a * (Integer)b;
         };
 
         // 没有大括号及返回语句
-        MathOperation division = (int a, int b) -> a / b;
+        MathOperation division = (Object a, Object b) -> (Integer)a / (Integer)b;
 
         /**
          * 调用方式一：
@@ -49,8 +49,8 @@ public class FunctionalInterfaceAndLambda {
 }
 
 @java.lang.FunctionalInterface
-interface MathOperation {
-    int operation(int a, int b);
+interface MathOperation<T> {
+    T operation(T a, T b);
 }
 
 @java.lang.FunctionalInterface

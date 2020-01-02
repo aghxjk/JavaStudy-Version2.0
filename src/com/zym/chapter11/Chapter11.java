@@ -38,6 +38,18 @@ package com.zym.chapter11;
  *              · 可选的大括号：如果主体包含了一个语句，就不需要使用大括号
  *              · 可选的返回关键字：如果主体只有一个表达式返回值则编译器会自动返回值，大括号需要指定明表达式返回了一个数值
  *
+ * 04. forEach & stream
+ *
+ * 05. 方法引用在Java8中使用方式相当灵活，总的来说，一共有以下几种形式：
+ *
+ *     5.1 静态方法引用：ClassName::methodName;
+ *     5.2 实例上的实例方法引用：instanceName::methodName;
+ *     5.3 超类上的实例方法引用：supper::methodName;
+ *     5.4 类的实例方法引用：ClassName:methodName;
+ *     5.5 构造方法引用：Class:new;
+ *     5.6 数组构造方法引用::TypeName[]::new
+ *
+ * 06. Optional
  */
 public class Chapter11 {
     public static void main(String[] args) {
@@ -61,5 +73,19 @@ public class Chapter11 {
          */
         System.out.println("-----------函数式接口 & Lambda表达式:");
         FunctionalInterfaceAndLambda.test();
+
+        /**
+         * 1. forEach & stream
+         */
+        System.out.println("-----------forEach & stream 示例:");
+        ForEachExample forEachExample = new ForEachExample();
+        forEachExample.test1();
+        forEachExample.test2();
+
+        /**
+         * 方法引用
+         */
+        MethodReference.test();
+
     }
 }
