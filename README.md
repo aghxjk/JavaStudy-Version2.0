@@ -103,8 +103,14 @@
         |---04. 获取Class类型后如何创建实例
         |---05. 可变长参数
         |---06. 反射机制 + IO + Properties 联合应用
+### [第11章 Java8 新特性](src/com/zym/chapter11/Chapter11.java)
+    |---第11章 [ Java8 新特性 ]
+        |---01. Interface：默认方法 & 静态方法
 ```text
   |---设计模式
         |---01. 动态代理模式(proxyMode)
         |---02. 工厂模式(Factory Pattern)
 ```
+### 参考：
+--
+1. [W3CSchool JAVA 教程](https://www.w3cschool.cn/java/)
