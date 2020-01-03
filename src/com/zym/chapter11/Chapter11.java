@@ -10,16 +10,16 @@ package com.zym.chapter11;
  *      发布的版本，是没法在给接口添加新方法的同时不影响已有的实现。所以引进的默认方法。他们的目的是为了解决接口的修改与现有的实现
  *      不兼容的问题。见：MyCar，RedCar示例.
  *
- * 02. 接口可以声明并实现静态方法。
+ *      接口可以声明并实现静态方法。
  *
- * 03. 函数式接口 与 lambda表达式：
- *      3.1 函数式接口：
+ * 02. 函数式接口 与 lambda表达式：
+ *      2.1 函数式接口：
  *          a) 函数式接口(Functional Interface)就是一个具有一个抽象方法的普通接口(可以有多个default方法)；
  *          b) 函数式接口可以被隐式转换为lambda表达式；
  *          c) 函数式接口可以使现有的函数友好地支持 lambda
  *          d) 如果一个接口满足函数式接口的定义，会默认转换成函数式接口(@FunctionalInterface注解显式声明)；
  *
- *      3.2 lambda表达式：
+ *      2.2 lambda表达式：
  *          a) 语法格式：
  *              (parameters) -> expression
  *              或
@@ -38,10 +38,9 @@ package com.zym.chapter11;
  *              · 可选的大括号：如果主体包含了一个语句，就不需要使用大括号
  *              · 可选的返回关键字：如果主体只有一个表达式返回值则编译器会自动返回值，大括号需要指定明表达式返回了一个数值
  *
- * 04. forEach & stream
+ * 03. forEach & stream
  *
- * 05. 方法引用在Java8中使用方式相当灵活，总的来说，一共有以下几种形式：
- *
+ * 04. 方法引用在Java8中使用方式相当灵活，总的来说，一共有以下几种形式：
  *     5.1 静态方法引用：ClassName::methodName;
  *     5.2 实例上的实例方法引用：instanceName::methodName;
  *     5.3 超类上的实例方法引用：supper::methodName;
@@ -49,7 +48,7 @@ package com.zym.chapter11;
  *     5.5 构造方法引用：Class:new;
  *     5.6 数组构造方法引用::TypeName[]::new
  *
- * 06. Optional
+ * 05. Optional
  */
 public class Chapter11 {
     public static void main(String[] args) {

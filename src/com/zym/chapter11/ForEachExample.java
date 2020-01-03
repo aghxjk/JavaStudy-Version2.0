@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 public class ForEachExample {
-    private List<Integer> list = new ArrayList<>();
+    private List<Character> list = new ArrayList<>();
 
     /**
      * 随机初始化20个整数,范围对应ASCII的65(A)~90(Z)
@@ -14,7 +14,7 @@ public class ForEachExample {
     public ForEachExample() {
         for (int i=0; i < 20; i++ ){
             // A-Z总共26个英文字符，A对应的ASCII整数值为65
-            list.add( (int) (65 + Math.random() * 26)) ;
+            list.add( (char) (65 + Math.random() * 26)) ;
         }
     }
 
@@ -38,9 +38,9 @@ public class ForEachExample {
      */
     public void test2() {
         System.out.println("-----------stream & filter & map & distinct & sorted & forEach");
-        list.stream().filter(c -> c > 'M').map(s -> (char)s.intValue()).distinct().sorted().forEach(System.out::println);
+        list.stream().filter(c -> c > 'M').distinct().map(s -> Character.toLowerCase(s)).sorted().forEach(System.out::println);
         System.out.println("-----------stream & filter & map & distinct & sorted & collect:");
-        String string = list.stream().filter(c -> c > 'M').map(s -> String.valueOf((char)s.intValue())).distinct().sorted().collect(Collectors.joining(", "));
+        String string = list.stream().filter(c -> c > 'M').map(s -> String.valueOf(Character.toLowerCase(s))).distinct().sorted().collect(Collectors.joining(", "));
         System.out.println(string);
     }
 

@@ -108,6 +108,9 @@
         |---01. Interface：默认方法 & 静态方法
         |---02. Lambda & 函数式接口
         |---03. forEach & stream
+        |---04. 方法引用
+        |---05. Optional
+        
 ```text
   |---设计模式
         |---01. 动态代理模式(proxyMode)
