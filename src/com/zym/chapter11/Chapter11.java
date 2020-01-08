@@ -1,5 +1,7 @@
 package com.zym.chapter11;
 
+import java.util.ArrayList;
+
 /**
  * Created by zhaoyimeng on 20/01/02
  *
@@ -86,5 +88,43 @@ public class Chapter11 {
          */
         MethodReference.test();
 
+        /**
+         * 快排示例
+         */
+        Chapter11 chapter11 = new Chapter11();
+        int[] res = chapter11.kuaiSort(new int[]{1, 3, 5, 8, 9, 0, 12, 4, 6, 7, 99, 0, 21,6 });
+        System.out.println("--------------快排结果");
+        for (int item : res) {
+            System.out.println(item);
+        }
+    }
+
+    /**
+     * 递归快排: int[]
+     * @param toSort
+     * @return
+     */
+    public int[] kuaiSort(int[] toSort) {
+        if (toSort.length < 2)
+            return toSort;
+        else {
+            int first = toSort[0];
+            ArrayList<Integer> left = new ArrayList<>();
+            ArrayList<Integer> right = new ArrayList<>();
+
+            for (int i = 1; i < toSort.length; i++) {
+                if (toSort[i] < first) {
+                    left.add(toSort[i]);
+                } else {
+                    right.add(toSort[i]);
+                }
+            }
+            int[] res = new int[toSort.length];
+
+            System.arraycopy(kuaiSort(left.stream().mapToInt(Integer::intValue).toArray()), 0, res, 0, left.size());
+            res[left.size()] = first;
+            System.arraycopy(kuaiSort(right.stream().mapToInt(Integer::intValue).toArray()), 0, res, left.size()+1, right.size());
+            return res;
+        }
     }
 }

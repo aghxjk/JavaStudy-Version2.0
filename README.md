@@ -55,7 +55,7 @@
         |---08. 数字格式化
         |---09. 随机数
         |---08. 枚举
-### [第7章 常用类](src/com/zym/chapter07/Chapter07.java)
+### [第7章 集合与Map](src/com/zym/chapter07/Chapter07.java)
     |---第7章 [ 集合与Map ]
         |---01. Collection(Interface)接口
         |---02. List(Interface)集合
