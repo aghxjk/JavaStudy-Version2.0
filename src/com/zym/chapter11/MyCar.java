@@ -6,8 +6,18 @@ package com.zym.chapter11;
  *  2. MyCar需要重写run()并指定使用哪个接口的default方法，否则会编译出错
  */
 public class MyCar implements IVehicle, IFourWheeler {
+
+    private String color;
+
+    public MyCar() {
+        this("default color");
+    }
+
+    public MyCar(String color) {
+        this.color = color;
+    }
     @Override
     public void run() {
-        IFourWheeler.super.run();
+        IFourWheeler.super.run(this.color);
     }
 }

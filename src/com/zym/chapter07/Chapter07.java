@@ -13,7 +13,7 @@ package com.zym.chapter07;
  *         |--SortedSet(Interface)
  *             |--TreeSet
  *
- *     a. 只能存储引用类型
+ *     a. 只能存储引用类型, 基础数据类型不支持,例如: int long double float
  *     b. List 和 Set 两个接口继承了该接口
  *     c. 存储在集合中的对象都需要重写equals方法
  *     d. 集合遍历借助迭代器
