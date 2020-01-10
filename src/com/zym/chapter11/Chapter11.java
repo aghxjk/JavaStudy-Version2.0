@@ -43,14 +43,17 @@ import java.util.ArrayList;
  * 03. forEach & stream
  *
  * 04. 方法引用在Java8中使用方式相当灵活，总的来说，一共有以下几种形式：
- *     5.1 静态方法引用：ClassName::methodName;
- *     5.2 实例上的实例方法引用：instanceName::methodName;
- *     5.3 超类上的实例方法引用：supper::methodName;
- *     5.4 类的实例方法引用：ClassName:methodName;
- *     5.5 构造方法引用：Class:new;
- *     5.6 数组构造方法引用::TypeName[]::new
+ *     4.1 静态方法引用：ClassName::methodName;
+ *     4.2 实例上的实例方法引用：instanceName::methodName;
+ *     4.3 超类上的实例方法引用：supper::methodName;
+ *     4.4 类的实例方法引用：ClassName:methodName;
+ *     4.5 构造方法引用：Class:new;
+ *     4.6 数组构造方法引用::TypeName[]::new
  *
- * 05. Optional
+ * 05. Optional: java.util.Optional
+ *      示例: OptionalExample.java
+ *
+ * 参考：https://blog.csdn.net/IO_Field/article/details/54971761
  */
 public class Chapter11 {
     public static void main(String[] args) {
