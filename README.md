@@ -115,7 +115,10 @@
   |---设计模式
         |---01. 动态代理模式(proxyMode)
         |---02. 工厂模式(Factory Pattern)
+
 ```
 ### 参考：
 --
 1. [W3CSchool JAVA 教程](https://www.w3cschool.cn/java/)
+2. [Web 开发入门教程(Vue + Spring Boot)](https://juejin.im/post/5ddb95ed6fb9a07add57c492)
+3. [Vue+springboot管理系统](https://juejin.im/post/5d5fadccf265da03a715dca2)
