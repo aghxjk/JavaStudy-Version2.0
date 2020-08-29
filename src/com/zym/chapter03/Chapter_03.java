@@ -169,7 +169,7 @@ import com.zym.chapter03.Car.YAMAHA;
  *
  */
 
-class Student{
+class Student {
     Student(){
         this("default", 10, true);
         System.out.println("construct function");
@@ -252,6 +252,13 @@ class Singleton2{
 public class Chapter_03 {
     public static void main(String args[]){
 
+        /**
+         * java对象实例过程：
+         * 见：https://blog.csdn.net/justloveyou_/article/details/72466416
+         *
+         * Java类的生命周期：
+         * 见：https://blog.csdn.net/justloveyou_/article/details/72466105
+         */
         Student st1 = new Student();
         st1.name = "name";
 
@@ -372,6 +379,7 @@ public class Chapter_03 {
         Car car2 = new Car(honda);
         car2.testEngin();
         System.out.println(car2.getClass().getName());
+        System.out.println(car1.getClass().getName());
         System.out.println(car2.hashCode());
         System.out.println(car1.hashCode());
 
