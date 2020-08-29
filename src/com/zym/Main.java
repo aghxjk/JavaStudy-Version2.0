@@ -6,26 +6,30 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
-        int x = Integer.valueOf("100");
-        int y = Integer.parseInt("100");
-        int [] arr = {1, 3, 5, 8, 9, 0, 12, 4, 6, 7, 99, 0, 21,6 };
-        ArrayList<Integer> toSort = new ArrayList<Integer>();
-        for (int item : arr) {
-            toSort.add(item);
+
+        if ( false ) {
+            // write your code here
+            int x = Integer.valueOf("100");
+            int y = Integer.parseInt("100");
+            int [] arr = {1, 3, 5, 8, 9, 0, 12, 4, 6, 7, 99, 0, 21,6 };
+            ArrayList<Integer> toSort = new ArrayList<Integer>();
+            for (int item : arr) {
+                toSort.add(item);
+            }
+
+            Main main = new Main();
+            ArrayList<Integer> res = main.kuaiSort(toSort);
+            for (int item: res) {
+                System.out.println(item);
+            }
+
+            System.out.println("------------------");
+            int[] ares = main.kuaiSort(arr);
+            for (int item : ares) {
+                System.out.println(item);
+            }
         }
 
-        Main main = new Main();
-        ArrayList<Integer> res = main.kuaiSort(toSort);
-        for (int item: res) {
-            System.out.println(item);
-        }
-
-        System.out.println("------------------");
-        int[] ares = main.kuaiSort(arr);
-        for (int item : ares) {
-            System.out.println(item);
-        }
     }
 
     /**
