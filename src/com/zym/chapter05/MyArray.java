@@ -1,5 +1,6 @@
 package com.zym.chapter05;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -14,6 +15,10 @@ public class MyArray {
          */
         //int型数据
         int[] intArr = {100, 200, 300, 400};
+
+        for (int i : intArr) {
+            System.out.println("intArr[" + Arrays.binarySearch(intArr, i) + "] =  " + i);
+        }
 
         for (int i=0; i<intArr.length; i++){
             System.out.println("intArr[" + i + "] =  " + intArr[i]);

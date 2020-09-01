@@ -1,11 +1,24 @@
 package com.zym;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import org.apache.commons.collections4.CollectionUtils;
+
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
+
+        int [] arr_1 = {1, 3, 5, 8, 9, 0, 12, 4, 6, 7, 99, 97, 21,6 };
+        List<Map<Integer, Integer>> list = findSum2(arr_1, 100);
+        if (CollectionUtils.isNotEmpty(list)) {
+            for (Map<Integer, Integer> i : list) {
+                for (Integer k : i.keySet()) {
+                    System.out.println("arr[" + (k+1) + "] = " + i.get(k));
+                }
+                System.out.println("-----------------");
+            }
+        }
+
 
         if ( false ) {
             // write your code here
@@ -88,5 +101,28 @@ public class Main {
             System.arraycopy(kuaiSort(right.stream().mapToInt(Integer::intValue).toArray()), 0, res, left.size()+1, right.size());
             return res;
         }
+    }
+
+    /**
+     * 求数组中2个数的和等于给定的某个数
+     * @param arrToFind
+     * @param sum
+     * @return 返回满足条件的数值对
+     */
+    public static List<Map<Integer, Integer>> findSum2(int[] arrToFind, int sum) {
+        Map<Integer, Integer> map = new HashMap<>();
+        List<Map<Integer, Integer>> list = new LinkedList<>();
+        for (int i=arrToFind.length-1; i > -1; i--) {
+            int temp = sum - arrToFind[i];
+            if (map.containsKey(temp)) {
+                Map<Integer, Integer> rs = new HashMap<>();
+                rs.put(i, arrToFind[i]);
+                rs.put(map.get(temp), temp);
+                list.add(rs);
+            } else {
+                map.put(arrToFind[i], i);
+            }
+        }
+        return list;
     }
 }
